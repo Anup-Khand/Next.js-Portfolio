@@ -1,12 +1,19 @@
+"use client"
 import Image from "next/image";
 import React from "react";
+import {motion} from "framer-motion"
 
 const ProfileComponent = () => {
   const iconWidth = 30;
   const iconHeight = 30;
 
   return (
-    <div className="sm:h-fit h-full w-full sm:w-auto bg-[#ffffff]  p-4 rounded-lg flex flex-col justify-start items-center relative">
+    <motion.div
+      initial={{ opacity: 0, x: "-30%" }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1.5 }}
+      className="shadow-[0px_5px_12px_0px_#0000004d] sm:h-fit h-full w-full sm:w-auto bg-[#ffffff]  p-4 rounded-lg flex flex-col justify-start items-center relative"
+    >
       {/* Image container */}
       <div className=" size-32 aspect-square bg-sky-300 overflow-hidden rounded-lg flex justify-center items-center sm:absolute -top-[16%] sm:left-1/2 transform sm:-translate-x-1/2">
         {/* You can replace this div with an img tag */}
@@ -33,7 +40,7 @@ const ProfileComponent = () => {
             width={iconWidth}
             height={iconHeight}
             alt="email"
-            className=" bg-gray-300 p-1 rounded-md"
+            className="shadow-[0px_5px_12px_0px_#0000004d] bg-gray-300 p-1 rounded-md"
           />
           <span className="flex flex-col">
             <span className="text-[0.8rem]">Email</span>
@@ -46,7 +53,7 @@ const ProfileComponent = () => {
             width={iconWidth}
             height={iconHeight}
             alt="email"
-            className=" bg-gray-300 p-1 rounded-md"
+            className="shadow-[0px_5px_12px_0px_#0000004d] bg-gray-300 p-1 rounded-md"
           />
           <span className="flex flex-col">
             <span className="text-[0.8rem]">Location</span>
@@ -59,7 +66,7 @@ const ProfileComponent = () => {
             width={iconWidth}
             height={iconHeight}
             alt="email"
-            className=" bg-gray-300 p-1 rounded-md"
+            className=" bg-gray-300 shadow-[0px_5px_12px_0px_#0000004d] p-1 rounded-md"
           />
           <span className="flex flex-col">
             <span className="text-[0.8rem]">Phone</span>
@@ -72,7 +79,7 @@ const ProfileComponent = () => {
             width={iconWidth}
             height={iconHeight}
             alt="email"
-            className=" bg-gray-300 p-1 rounded-md"
+            className="shadow-[0px_5px_12px_0px_#0000004d] bg-gray-300 p-1 rounded-md"
           />
           <span className="flex flex-col">
             <span className="text-[0.8rem]"> Birthday</span>
@@ -85,7 +92,7 @@ const ProfileComponent = () => {
       <button className="mt-4 bg-blue-500 text-white p-2 rounded-lg">
         Download CV
       </button>
-    </div>
+    </motion.div>
   );
 };
 

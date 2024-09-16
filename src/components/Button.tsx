@@ -63,7 +63,7 @@ const Button = ({ className, onClick, children }: ButtonProps) => {
       // onClick={onClick}
       className={`${className} rounded-full size-20 flex justify-center items-center font-medium text-md transition-all   ease-out relative hover:text-white Swipe overflow-hidden`}
     >
-      <motion.span style={{ x: textX, y: textY }}>{children}</motion.span>
+      <motion.span style={{ x: textX, y: textY }} className="flex flex-col justify-center items-center gap-2">{children}</motion.span>
     </motion.span>
   );
 };

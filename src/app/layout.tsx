@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import ProfileComponent from "@/components/ProfileComponent";
 import Navigation from "@/components/Navigation";
+import Middle from "@/components/Middle";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -21,15 +22,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <div className="grid sm:grid-cols-[1.5fr_3fr_1fr] justify-center gap-3 items-center h-screen bg-custom-image">
-          <div className="flex justify-center items-center">
+        <div className="grid sm:grid-cols-[1.5fr_3fr_1fr] sm:justify-center gap-3 items-center sm:h-screen bg-custom-image">
+          <div className="sm:flex justify-center items-center">
             <ProfileComponent />
           </div>
 
           {/* Children inside 3fr width */}
-          <div className="h-[95vh] overflow-y-scroll hide-scrollbar bg-[#ffffff] rounded-lg">
-            {children}
-          </div>
+          {/* <div className="h-[95vh] overflow-y-scroll hide-scrollbar sm:bg-[#ffffff] rounded-lg"></div> */}
+
+          <Middle>{children}</Middle>
 
           {/* Navigation inside 1fr width and centered */}
           <div className="flex justify-center items-center">
